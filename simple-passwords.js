@@ -11,6 +11,8 @@ Dependencies: Bootstrap Glyphicons, jQuery
 
 // automatically add glyphicon eye to the show-password button
 $('.show-password').addClass('glyphicon glyphicon-eye-close');
+$('.show-password').attr('title','Hold to show password');
+$('.show-password').attr('type','button');
 
 // show password on mouse down of the eye button
 $('.show-password').mousedown( function() {
