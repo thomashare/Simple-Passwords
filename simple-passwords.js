@@ -19,8 +19,15 @@ $('.show-password').mousedown( function() {
   $('.show-password').toggleClass('glyphicon-eye-open');
 });
 
-// hide password of mosueup of the eye button
+// hide password of mouseup of the eye button
 $('.show-password').mouseup( function() {
+  $('.show-password').prev().attr('type','password');
+  $('.show-password').toggleClass('glyphicon-eye-close');
+  $('.show-password').toggleClass('glyphicon-eye-open');
+});
+
+// hide password of mouseout of the eye button
+$('.show-password').mouseout( function() {
   $('.show-password').prev().attr('type','password');
   $('.show-password').toggleClass('glyphicon-eye-close');
   $('.show-password').toggleClass('glyphicon-eye-open');
