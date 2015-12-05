@@ -1,4 +1,4 @@
-// Simple Passwords
+// Simple Passwords [start]
 // Places an eye icon after a password field to show/hide the typed password.
 
 /*
@@ -11,26 +11,31 @@ Dependencies: Bootstrap Glyphicons, jQuery
 
 // automatically add glyphicon eye to the show-password button
 $('.show-password').addClass('glyphicon glyphicon-eye-close');
+
 $('.show-password').attr('title','Hold to show password');
-$('.show-password').attr('type','button');
 
 // show password on mouse down of the eye button
 $('.show-password').mousedown( function() {
-  $('.show-password').prev().attr('type','text');
-  $('.show-password').toggleClass('glyphicon-eye-close');
-  $('.show-password').toggleClass('glyphicon-eye-open');
+  $('.show-password').prev('input').attr('type','text');
+  $('.show-password').parent().prev().last('input').attr('type','text');
+  $('.show-password').removeClass('glyphicon-eye-close');
+  $('.show-password').addClass('glyphicon-eye-open');
 });
 
-// hide password of mouseup of the eye button
+// hide password of mouse up of the eye button
 $('.show-password').mouseup( function() {
-  $('.show-password').prev().attr('type','password');
-  $('.show-password').toggleClass('glyphicon-eye-close');
-  $('.show-password').toggleClass('glyphicon-eye-open');
+  $('.show-password').prev('input').attr('type','password');
+  $('.show-password').parent().prev().last('input').attr('type','password');
+  $('.show-password').addClass('glyphicon-eye-close');
+  $('.show-password').removeClass('glyphicon-eye-open');
 });
 
-// hide password of mouseout of the eye button
-$('.show-password').mouseout( function() {
-  $('.show-password').prev().attr('type','password');
-  $('.show-password').toggleClass('glyphicon-eye-close');
-  $('.show-password').toggleClass('glyphicon-eye-open');
+// hide password of mouse out of the eye button
+$('.show-password').mouseleave( function() {
+  $('.show-password').prev('input').attr('type','password');
+  $('.show-password').parent().prev().last('input').attr('type','password');
+  $('.show-password').addClass('glyphicon-eye-close');
+  $('.show-password').removeClass('glyphicon-eye-open');
 });
+
+// Simple Passwords [end]
