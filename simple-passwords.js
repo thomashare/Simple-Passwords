@@ -16,24 +16,21 @@ $('.show-password').attr('title','Hold to show password');
 
 // show password on mouse down of the eye button
 $('.show-password').mousedown( function() {
-  $('.show-password').prev('input').attr('type','text');
-  $('.show-password').parent().prev().prev('input').attr('type','text');
+  $(':input[type=password]').attr('type', 'text');
   $('.show-password').removeClass('glyphicon-eye-close');
   $('.show-password').addClass('glyphicon-eye-open');
 });
 
 // hide password of mouse up of the eye button
 $('.show-password').mouseup( function() {
-  $('.show-password').prev('input').attr('type','password');
-  $('.show-password').parent().prev().prev('input').attr('type','password');
+  $(':input[type=text]').attr('type', 'password');
   $('.show-password').addClass('glyphicon-eye-close');
   $('.show-password').removeClass('glyphicon-eye-open');
 });
 
 // hide password of mouse out of the eye button
 $('.show-password').mouseleave( function() {
-  $('.show-password').prev('input').attr('type','password');
-  $('.show-password').parent().prev().prev('input').attr('type','password');
+  $(':input[type=text]').attr('type', 'password');
   $('.show-password').addClass('glyphicon-eye-close');
   $('.show-password').removeClass('glyphicon-eye-open');
 });
